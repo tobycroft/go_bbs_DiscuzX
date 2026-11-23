@@ -19,16 +19,29 @@ Go BBS DiscuzX 是一个使用 Go 语言重写的论坛后端程序，复刻了 
 ## 技术栈
 
 - 语言：Go
+- 框架：[TuuzGoWeb](https://github.com/tobycroft/TuuzGoWeb)（四段路由 / MAC 架构）
+- ORM：Gorose-Pro
 - 接口：HTTP / JSON API
 - 配套前端：[vue_bbs_DiscuzX](https://github.com/tobycroft/vue_bbs_DiscuzX)
 
 ## 项目结构
 
-（待补充）
+- `app`：业务控制面（controller / model / action）
+- `common`：公共控制面与公共 Model
+- `config`：配置读取（app / db / redis 等）
+- `extend`：插件扩展
+- `route`：路由控制面（OnRoute 为唯一入口）
+- `tuuz`：核心工具库（RET / Input / Redis / Calc 等）
 
 ## 快速开始
 
-（待补充）
+```bash
+# 拉取依赖并运行
+go mod tidy
+go run main.go
+```
+
+配置文件按需生成于项目根目录 `conf.ini`（未启用的插件不会出现在配置中）。
 
 ## 贡献
 
